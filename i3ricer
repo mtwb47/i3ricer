@@ -3,21 +3,28 @@
 #author Matt Weber
 # This script, simple though it is, will install i3-gaps, sxhkd, and install Matt's i3 Rice.
 
-
 #Dependencies and i3-Gaps
+if command -v pacman &> /dev/null
+then
 sudo pacman -S --noconfirm i3-gaps sxhkd picom alacritty termite dmenu rofi i3lock trizen feh
 
 trizen -S --noconfirm polybar nerd-fonts-hack
+fi
+if command -v apt &> /dev/null
+then
+	sudo apt install sxhkd rofi i3 i3lock polybar fonts-font-awesome picom
+fi
+
 
 
 #Download Rice
+cd $HOME
 git clone https://github.com/mtwb47/i3stuff.git
 
 #Moving Stuff
 cd i3stuff
 cp -r polybar i3 ~/.config
 sudo cp i3as.sh /usr/local/bin
-
-rm -r i3stuff
+cd && rm -r i3stuff
 
 echo "Reboot or Log out"
