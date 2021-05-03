@@ -6,13 +6,13 @@
 #Dependencies and i3-Gaps
 if command -v pacman &> /dev/null
 then
-sudo pacman -S --noconfirm i3-gaps sxhkd picom alacritty termite dmenu rofi i3lock trizen feh
+sudo pacman -S --noconfirm i3-gaps sxhkd picom alacritty termite dmenu rofi i3lock git trizen feh
 
 trizen -S --noconfirm polybar nerd-fonts-hack
 fi
 if command -v apt &> /dev/null
 then
-	sudo apt install sxhkd rofi i3 i3lock polybar fonts-font-awesome picom
+	sudo apt install sxhkd rofi i3 i3lock polybar fonts-font-awesome picom git
 fi
 
 
